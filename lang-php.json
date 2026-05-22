@@ -5,7 +5,6 @@
     {
       "description": "Ignore PHP Platform updates",
       "matchManagers": ["composer"],
-      "rangeStrategy": "bump",
       "rollbackPrs": true
     },
     {
