@@ -4,7 +4,6 @@
   "extends": [
     ":automergeBranch",
     ":automergeMinor",
-    ":combinePatchMinorReleases",
     ":configMigration",
     ":dependencyDashboard",
     ":enableVulnerabilityAlerts",
