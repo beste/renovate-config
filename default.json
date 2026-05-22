@@ -15,7 +15,6 @@
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "group:allNonMajor",
     "helpers:pinGitHubActionDigests"
   ],
   "commitBodyTable": true,
