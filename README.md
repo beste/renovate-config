@@ -1,0 +1,1 @@
+# BESTE Renovate config

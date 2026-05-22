@@ -1,0 +1,36 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default configuration for repositories under `beste/`",
+  "extends": [
+    ":automergeBranch",
+    ":automergeMinor",
+    ":combinePatchMinorReleases",
+    ":configMigration",
+    ":dependencyDashboard",
+    ":enableVulnerabilityAlerts",
+    ":ignoreModulesAndTests",
+    ":label(dependencies)",
+    ":rebaseStalePrs",
+    ":semanticCommitsDisabled",
+    ":separateMajorReleases",
+    ":timezone(UTC)",
+    "docker:pinDigests",
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "commitBodyTable": true,
+  "dependencyDashboardOSVVulnerabilitySummary": "all",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:daily"]
+  },
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "osvVulnerabilityAlerts": true,
+  "rangeStrategy": "bump",
+  "vulnerabilityAlerts": {
+    "extends": [":automergeDisabled", ":automergePr", ":labels(security)"],
+    "rangeStrategy": "bump"
+  }
+}

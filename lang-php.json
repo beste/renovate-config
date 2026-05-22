@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>beste/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Ignore PHP Platform updates",
+      "matchManagers": ["composer"],
+      "rangeStrategy": "bump",
+      "rollbackPrs": true
+    },
+    {
+      "description": "Ignore PHP Platform updates",
+      "matchManagers": ["composer"],
+      "matchDepNames": ["php"],
+      "enabled": false
+    }
+  ]
+}
