@@ -53,6 +53,14 @@
       "groupName": "GitHub Actions non-major dependencies",
       "groupSlug": "github-actions-non-major",
       "dependencyDashboardCategory": "⚙️ GitHub Actions"
+    },
+    {
+      "description": "Automerge docs Python tooling minor and patch updates",
+      "matchFileNames": ["docs/pyproject.toml", "docs/uv.lock"],
+      "matchManagers": ["pep621", "uv"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "dependencyDashboardCategory": "📚 Docs"
     }
   ],
   "major": {
