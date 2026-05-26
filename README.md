@@ -6,7 +6,9 @@ Shared Renovate presets for `beste/` repositories.
 
 - `renovate.json` — default entrypoint for repos using this config
 - `default.json` — base preset for most repos
-- `lang-php.json` — PHP-specific overrides
+- `lang-php.json` — PHP umbrella preset
+- `php-composer.json` — Composer behavior for PHP repos
+- `php-platform.json` — PHP platform pin/ignore rules
 
 ## Behavior
 
@@ -22,5 +24,5 @@ Shared Renovate presets for `beste/` repositories.
 ## Notes
 
 - Major updates need Dependency Dashboard approval
-- PHP platform package `php` is disabled in `lang-php.json`
+- PHP platform package `php` is disabled in `php-platform.json`
 - `renovate.json` can stay tiny; repo-specific overrides belong in child preset

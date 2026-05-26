@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "PHP Composer defaults for beste/ repos",
+  "packageRules": [
+    {
+      "description": "Composer deps: keep minor/patch grouped",
+      "matchManagers": ["composer"],
+      "separateMinorPatch": false,
+      "rollbackPrs": true
+    }
+  ]
+}

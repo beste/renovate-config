@@ -1,19 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>beste/renovate-config"],
-  "packageRules": [
-    {
-      "description": "Update composer dependencies",
-      "matchManagers": ["composer"],
-      "separateMinorPatch": false,
-      "rollbackPrs": true,
-      "extractVersionTemplate": "^v?(?<version>.*)$"
-    },
-    {
-      "description": "Ignore PHP Platform updates",
-      "matchManagers": ["composer"],
-      "matchDepNames": ["php"],
-      "enabled": false
-    }
+  "extends": [
+    "local>beste/renovate-config/default",
+    "local>beste/renovate-config/php-composer",
+    "local>beste/renovate-config/php-platform"
   ]
 }
