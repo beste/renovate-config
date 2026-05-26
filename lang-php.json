@@ -1,8 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>beste/renovate-config/default",
-    "local>beste/renovate-config/php-composer",
-    "local>beste/renovate-config/php-platform"
+    "local>beste/renovate-config",
+    "local>beste/renovate-config:php-composer",
+    "local>beste/renovate-config:php-platform"
   ]
 }
