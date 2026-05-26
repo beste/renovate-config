@@ -18,6 +18,7 @@
   ],
   "prCreation": "status-success",
   "commitBodyTable": true,
+  "minimumReleaseAge": "7 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
   "schedule": ["* 6 * * *"],
