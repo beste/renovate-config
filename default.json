@@ -38,6 +38,11 @@
       "dependencyDashboardCategory": "📦 Composer"
     },
     {
+      "description": "Shorter wait for patch updates",
+      "matchUpdateTypes": ["patch"],
+      "minimumReleaseAge": "1 day"
+    },
+    {
       "description": "Group PHP tool Composer minor and patch updates",
       "matchManagers": ["composer"],
       "matchFileNames": ["tools/.phpstan/composer.json", "tools/.rector/composer.json"],

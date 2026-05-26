@@ -14,6 +14,7 @@ Shared Renovate presets for `beste/` repositories.
 
 - Daily run at `06:00 UTC`
 - Auto-merge minor updates for safe groups
+- Patch updates wait `1 day`; other updates keep `7 days`
 - Dependency Dashboard enabled
 - Vulnerability alerts enabled
 - Lock file maintenance enabled
