@@ -59,7 +59,7 @@
     "dependencyDashboardApproval": true
   },
   "osvVulnerabilityAlerts": true,
-  "rangeStrategy": "bump",
+  "rangeStrategy": "widen",
   "vulnerabilityAlerts": {
     "extends": [":automergeDisabled", ":automergePr", ":labels(security)"],
     "rangeStrategy": "bump"
