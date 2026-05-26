@@ -18,6 +18,9 @@
   ],
   "prCreation": "status-success",
   "commitBodyTable": true,
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 2,
+  "schedule": ["* 6 * * *"],
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,
