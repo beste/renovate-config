@@ -16,12 +16,29 @@
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests"
   ],
+  "prCreation": "status-success",
   "commitBodyTable": true,
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,
     "extends": ["schedule:daily"]
   },
+  "packageRules": [
+    {
+      "description": "Group Composer minor and patch updates",
+      "matchManagers": ["composer"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Composer non-major dependencies",
+      "groupSlug": "composer-non-major"
+    },
+    {
+      "description": "Group GitHub Actions minor and patch updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "GitHub Actions non-major dependencies",
+      "groupSlug": "github-actions-non-major"
+    }
+  ],
   "major": {
     "dependencyDashboardApproval": true
   },
