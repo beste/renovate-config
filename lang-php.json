@@ -6,7 +6,8 @@
       "description": "Update composer dependencies",
       "matchManagers": ["composer"],
       "separateMinorPatch": false,
-      "rollbackPrs": true
+      "rollbackPrs": true,
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     },
     {
       "description": "Ignore PHP Platform updates",
