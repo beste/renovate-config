@@ -24,4 +24,4 @@ jobs:
           node-version: 22
 
       - name: Validate Renovate presets
-        run: npx --yes --package renovate -- renovate-config-validator default.json github-actions.json lang-php.json php-composer.json php-platform.json renovate.json
+        run: npx --yes --package renovate -- renovate-config-validator *.json
