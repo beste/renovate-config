@@ -14,14 +14,16 @@
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
+    "local>beste/renovate-config:github-actions"
   ],
   "prCreation": "status-success",
   "commitBodyTable": true,
+  "internalChecksFilter": "strict",
   "minimumReleaseAge": "7 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
-  "schedule": ["0 6 * * *"],
+  "schedule": ["* 6 * * *"],
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,
@@ -29,35 +31,9 @@
   },
   "packageRules": [
     {
-      "description": "Group app Composer minor and patch updates",
-      "matchManagers": ["composer"],
-      "matchFileNames": ["composer.json"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "App Composer non-major dependencies",
-      "groupSlug": "app-composer-non-major",
-      "dependencyDashboardCategory": "📦 Composer"
-    },
-    {
       "description": "Shorter wait for patch updates",
       "matchUpdateTypes": ["patch"],
       "minimumReleaseAge": "1 day"
-    },
-    {
-      "description": "Group PHP tool Composer minor and patch updates",
-      "matchManagers": ["composer"],
-      "matchFileNames": ["tools/.phpstan/composer.json", "tools/.rector/composer.json"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "PHP tool Composer non-major dependencies",
-      "groupSlug": "php-tools-composer-non-major",
-      "dependencyDashboardCategory": "🛠️ PHP tools"
-    },
-    {
-      "description": "Group GitHub Actions minor and patch updates",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "GitHub Actions non-major dependencies",
-      "groupSlug": "github-actions-non-major",
-      "dependencyDashboardCategory": "⚙️ GitHub Actions"
     },
     {
       "description": "Automerge docs Python tooling minor and patch updates",

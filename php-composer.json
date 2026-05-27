@@ -7,6 +7,30 @@
       "matchManagers": ["composer"],
       "separateMinorPatch": false,
       "rollbackPrs": true
+    },
+    {
+      "description": "Automerge Composer minor and patch updates",
+      "matchManagers": ["composer"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Group app Composer minor and patch updates",
+      "matchManagers": ["composer"],
+      "matchFileNames": ["composer.json"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "App Composer non-major dependencies",
+      "groupSlug": "app-composer-non-major",
+      "dependencyDashboardCategory": "📦 Composer"
+    },
+    {
+      "description": "Group PHP tool Composer minor and patch updates",
+      "matchManagers": ["composer"],
+      "matchFileNames": ["tools/.phpstan/composer.json", "tools/.rector/composer.json"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "PHP tool Composer non-major dependencies",
+      "groupSlug": "php-tools-composer-non-major",
+      "dependencyDashboardCategory": "🛠️ PHP tools"
     }
   ]
 }
