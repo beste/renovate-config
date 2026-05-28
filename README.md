@@ -22,6 +22,7 @@ Shared Renovate presets for `beste/` repositories.
 - Lock file maintenance enabled
 - GitHub Actions minor/patch grouped and auto-merged
 - PHP Composer minor/patch grouped and auto-merged through the PHP preset
+- Common Composer virtual implementation packages are ignored to avoid lookup warnings
 - Docs Python tooling minor/patch auto-merged
 
 ## Usage

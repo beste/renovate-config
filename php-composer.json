@@ -15,6 +15,13 @@
       "automerge": true
     },
     {
+      "description": "Ignore common Composer virtual implementation packages",
+      "matchManagers": ["composer"],
+      "matchDatasources": ["packagist"],
+      "matchPackageNames": ["/-implementation$/"],
+      "enabled": false
+    },
+    {
       "description": "Group app Composer minor and patch updates",
       "matchManagers": ["composer"],
       "matchFileNames": ["composer.json"],
