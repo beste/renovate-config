@@ -17,7 +17,6 @@
     "helpers:pinGitHubActionDigests",
     "local>beste/renovate-config:github-actions"
   ],
-  "prCreation": "status-success",
   "commitBodyTable": true,
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "7 days",
