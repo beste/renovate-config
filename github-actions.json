@@ -3,6 +3,12 @@
   "description": "GitHub Actions defaults for beste/ repos",
   "packageRules": [
     {
+      "description": "Create initial GitHub Actions digest pinning PRs without release-age delay",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["pinDigest"],
+      "minimumReleaseAge": null
+    },
+    {
       "description": "Group and automerge GitHub Actions minor and patch updates",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
