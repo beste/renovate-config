@@ -6,7 +6,8 @@
       "description": "Create initial GitHub Actions digest pinning PRs without release-age delay",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["pinDigest"],
-      "minimumReleaseAge": null
+      "minimumReleaseAge": null,
+      "automerge": true
     },
     {
       "description": "Group and automerge GitHub Actions minor and patch updates",
