@@ -30,11 +30,6 @@
   },
   "packageRules": [
     {
-      "description": "Shorter wait for patch updates",
-      "matchUpdateTypes": ["patch"],
-      "minimumReleaseAge": "1 day"
-    },
-    {
       "description": "Automerge docs Python tooling minor and patch updates",
       "matchFileNames": ["docs/pyproject.toml", "docs/uv.lock"],
       "matchManagers": ["pep621", "uv"],
