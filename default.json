@@ -14,7 +14,8 @@
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "helpers:pinGitHubActionDigests",
+    "helpers:githubDigestChangelogs",
+    "helpers:pinGitHubActionDigestsToSemver",
     "local>beste/renovate-config:github-actions"
   ],
   "commitBodyTable": true,

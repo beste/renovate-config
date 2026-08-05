@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Keep GitHub Actions SHA-pinned while tracking exact SemVer releases and linking digest comparisons.
 - Add CI validation for Renovate preset files.
 - Add a dedicated GitHub Actions preset.
 - Ignore common Composer virtual implementation packages.

@@ -20,6 +20,8 @@ Shared Renovate presets for `beste/` repositories.
 - Dependency Dashboard enabled
 - Vulnerability alerts enabled
 - Lock file maintenance enabled
+- GitHub Actions pinned to immutable commit SHAs with exact SemVer comments
+- GitHub Actions digest updates include commit-to-commit comparison links
 - GitHub Actions minor/patch grouped and auto-merged
 - PHP Composer minor/patch grouped and auto-merged through the PHP preset
 - Common Composer virtual implementation packages are ignored to avoid lookup warnings
