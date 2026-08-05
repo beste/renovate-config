@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Repository-wide merge and commit policy for beste/ repos",
+  "extends": [
+    ":automergePr",
+    ":automergeRequireAllStatusChecks",
+    ":semanticCommitsDisabled"
+  ],
+  "automergeStrategy": "rebase",
+  "platformAutomerge": false,
+  "prCreation": "immediate"
+}

@@ -1,13 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "GitHub Actions defaults for beste/ repos",
+  "extends": [
+    "helpers:githubDigestChangelogs",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
   "packageRules": [
     {
       "description": "Create initial GitHub Actions digest pinning PRs without release-age delay",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["pinDigest"],
+      "groupName": "GitHub Actions digest pinning",
+      "groupSlug": "github-actions-digest-pinning",
       "minimumReleaseAge": null,
-      "automerge": true
+      "automerge": true,
+      "dependencyDashboardCategory": "⚙️ GitHub Actions"
     },
     {
       "description": "Group and automerge GitHub Actions minor and patch updates",

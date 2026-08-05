@@ -2,20 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Default configuration for repositories under `beste/`",
   "extends": [
-    ":automergeBranch",
-    ":automergeMinor",
+    "local>beste/renovate-config:base",
     ":configMigration",
     ":dependencyDashboard",
     ":enableVulnerabilityAlerts",
     ":ignoreModulesAndTests",
     ":label(dependencies)",
     ":rebaseStalePrs",
-    ":semanticCommitsDisabled",
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "helpers:githubDigestChangelogs",
-    "helpers:pinGitHubActionDigestsToSemver",
     "local>beste/renovate-config:github-actions"
   ],
   "commitBodyTable": true,
@@ -27,6 +23,7 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,
+    "automerge": true,
     "extends": ["schedule:daily"]
   },
   "packageRules": [
@@ -45,7 +42,7 @@
   "osvVulnerabilityAlerts": true,
   "rangeStrategy": "widen",
   "vulnerabilityAlerts": {
-    "extends": [":automergeDisabled", ":automergePr", ":labels(security)"],
+    "extends": [":automergeDisabled", ":automergePr", ":label(security)"],
     "rangeStrategy": "bump"
   }
 }

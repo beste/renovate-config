@@ -24,4 +24,4 @@ jobs:
           node-version: 22
 
       - name: Validate Renovate presets
-        run: npx --yes --package renovate -- renovate-config-validator *.json
+        run: npx --yes --package renovate -- renovate-config-validator --strict --no-global *.json
