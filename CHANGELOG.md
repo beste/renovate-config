@@ -8,6 +8,7 @@
 - Pin GitHub Actions to immutable SHAs with exact SemVer comments and digest comparison links.
 - Automerge initial GitHub Action SHA pinning immediately while keeping subsequent digest updates manual.
 - Separate initial GitHub Action pinning from other digest-pinning updates.
+- Replace workflow runtime and tool versions instead of widening their ranges.
 - Keep vulnerability updates immediate but manual and apply the `security` label correctly.
 - Allow normal update branches whenever Renovate runs.
 - Use strict seven-day release-age filtering for supported normal updates.

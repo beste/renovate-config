@@ -7,6 +7,12 @@
   ],
   "packageRules": [
     {
+      "description": "Replace workflow runtime and tool versions",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["uses-with"],
+      "rangeStrategy": "replace"
+    },
+    {
       "description": "Create initial GitHub Actions digest pinning PRs without release-age delay",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["pinDigest"],
