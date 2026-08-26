@@ -5,7 +5,7 @@ Shared Renovate presets for `beste/` repositories.
 ## Presets
 
 - `base.json` — repository-wide PR, merge, status-check, and commit-message policy
-- `default.json` — general schedule, release age, dashboard, vulnerability, lock-file, Docker, documentation, and GitHub Actions behavior
+- `default.json` — general release age, dashboard, vulnerability, lock-file, Docker, documentation, and GitHub Actions behavior
 - `github-actions.json` — GitHub Actions SHA pinning, grouping, and targeted automerge rules
 - `lang-php.json` — complete PHP preset combining `default`, `php-composer`, and `php-platform`
 - `php-composer.json` — Composer grouping and targeted automerge rules
@@ -24,10 +24,7 @@ The complete presets use the following behavior:
 - Require all status checks to pass before automerging
 - Disable semantic prefixes for commit messages and pull-request titles
 - Rebase pull requests whenever they fall behind their base branch
-- Create normal update branches during the `06:00`–`06:59 UTC` window
 - Limit creation to two pull requests per hour and ten concurrent pull requests
-
-The schedule controls when Renovate may create branches; it does not guarantee that the hosted Renovate app runs at a particular minute.
 
 ## Update policy
 
@@ -53,7 +50,7 @@ Minor and patch automerge includes pre-`1.0` dependencies. There is no special `
 
 - The Dependency Dashboard is enabled and includes the OSV vulnerability summary.
 - GitHub vulnerability alerts and experimental OSV vulnerability alerts are enabled.
-- Vulnerability pull requests bypass the normal schedule, rate limits, approval requirement, and release-age gate. They receive the `security` label and remain manual.
+- Vulnerability pull requests bypass rate limits, approval requirements, and the release-age gate. They receive the `security` label and remain manual.
 - Docker references are pinned to digests where supported.
 - GitHub Actions are pinned to immutable commit SHAs while retaining exact SemVer comments.
 - Subsequent GitHub Action digest updates include commit-to-commit comparison links and remain manual.
@@ -90,4 +87,4 @@ For a custom configuration, begin with the repository-wide base and add only the
 }
 ```
 
-Manager fragments do not enable the complete default schedule, seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings explicitly when constructing a custom policy.
+Manager fragments do not enable the seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings explicitly when constructing a custom policy.

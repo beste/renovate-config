@@ -19,7 +19,6 @@
   "minimumReleaseAge": "7 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
-  "schedule": ["* 6 * * *"],
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,
