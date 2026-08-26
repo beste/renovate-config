@@ -42,7 +42,7 @@ For general repositories:
 
 ```json
 {
-  "extends": ["local>beste/renovate-config"]
+  "extends": ["github>beste/renovate-config"]
 }
 ```
 
@@ -50,7 +50,7 @@ For PHP repositories:
 
 ```json
 {
-  "extends": ["local>beste/renovate-config:lang-php"]
+  "extends": ["github>beste/renovate-config:lang-php"]
 }
 ```
 
@@ -59,10 +59,12 @@ For a custom configuration, start with the base and add the required manager fra
 ```json
 {
   "extends": [
-    "local>beste/renovate-config:base",
-    "local>beste/renovate-config:github-actions"
+    "github>beste/renovate-config:base",
+    "github>beste/renovate-config:github-actions"
   ]
 }
 ```
+
+The examples use `github>` because this repository is hosted on GitHub.com. Use `local>` for a mirror hosted on the same forge instance as the target repository.
 
 Manager fragments do not include the seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings separately.

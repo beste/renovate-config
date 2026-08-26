@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Complete default preset",
   "extends": [
-    "local>beste/renovate-config:base",
+    "./base",
     ":configMigration",
     ":dependencyDashboard",
     ":enableVulnerabilityAlerts",
@@ -12,7 +12,7 @@
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "local>beste/renovate-config:github-actions"
+    "./github-actions"
   ],
   "commitBodyTable": true,
   "internalChecksFilter": "strict",
