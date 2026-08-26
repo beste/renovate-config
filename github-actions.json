@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "GitHub Actions defaults for beste/ repos",
+  "description": "GitHub Actions update policy",
   "extends": [
     "helpers:githubDigestChangelogs",
     "helpers:pinGitHubActionDigestsToSemver"

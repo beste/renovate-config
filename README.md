@@ -1,30 +1,20 @@
 # BESTE Renovate config
 
-Shared Renovate presets for `beste/` repositories.
+Shared Renovate presets for general and PHP repositories.
+
+The configuration files define behavior. This README covers preset selection and summarizes the effective update policy.
 
 ## Presets
 
-- `base.json` — repository-wide PR, merge, status-check, and commit-message policy
-- `default.json` — general release age, dashboard, vulnerability, lock-file, Docker, documentation, and GitHub Actions behavior
-- `github-actions.json` — GitHub Actions SHA pinning, grouping, and targeted automerge rules
-- `lang-php.json` — complete PHP preset combining `default`, `php-composer`, and `php-platform`
-- `php-composer.json` — Composer grouping and targeted automerge rules
-- `php-platform.json` — disables updates to the Composer `php` platform dependency
-- `renovate.json` — configuration used by Renovate for this repository
+- `base.json` - repository-wide policy
+- `default.json` - complete default preset
+- `github-actions.json` - GitHub Actions policy
+- `lang-php.json` - complete PHP preset
+- `php-composer.json` - Composer policy
+- `php-platform.json` - ignores updates to the Composer `php` platform dependency
+- `renovate.json` - this repository's Renovate configuration
 
-`base.json` and the manager presets are composable fragments. Use `default.json` or `lang-php.json` when the complete repository policy is wanted.
-
-## Repository-wide policy
-
-The complete presets use the following behavior:
-
-- Create pull requests before automerging
-- Let Renovate perform the merge instead of GitHub platform-native auto-merge
-- Rebase-merge automerge-enabled pull requests
-- Require all status checks to pass before automerging
-- Disable semantic prefixes for commit messages and pull-request titles
-- Rebase pull requests whenever they fall behind their base branch
-- Limit creation to two pull requests per hour and ten concurrent pull requests
+`base.json` and the manager presets are composable fragments. Use `default.json` or `lang-php.json` for a complete configuration.
 
 ## Update policy
 
@@ -42,25 +32,13 @@ The complete presets use the following behavior:
 | Vulnerability updates | Immediate | Manual merge |
 | All other updates | 7 days when supported | Manual merge |
 
-The seven-day age gate uses strict filtering. Releases without a usable timestamp are not considered old enough. Some update types and datasources cannot enforce release age; the table calls out the important exceptions.
+Strict filtering blocks releases without a usable timestamp. Renovate cannot apply the seven-day age gate to every update type or datasource; the table lists the relevant exceptions.
 
-Minor and patch automerge includes pre-`1.0` dependencies. There is no special `0.x` exclusion.
-
-## Security and dependency details
-
-- The Dependency Dashboard is enabled and includes the OSV vulnerability summary.
-- GitHub vulnerability alerts and experimental OSV vulnerability alerts are enabled.
-- Vulnerability pull requests bypass rate limits, approval requirements, and the release-age gate. They receive the `security` label and remain manual.
-- Docker references are pinned to digests where supported.
-- GitHub Actions are pinned to immutable commit SHAs while retaining exact SemVer comments.
-- Subsequent GitHub Action digest updates include commit-to-commit comparison links and remain manual.
-- Global dependency ranges use the `widen` strategy; vulnerability fixes use `bump`.
-- Common Composer virtual implementation packages are ignored to avoid lookup warnings.
-- The Composer `php` platform dependency is ignored by the PHP preset.
+Minor and patch automerge includes pre-`1.0` dependencies. No rule excludes `0.x` releases.
 
 ## Usage
 
-Use the complete default preset for general repositories:
+For general repositories:
 
 ```json
 {
@@ -68,7 +46,7 @@ Use the complete default preset for general repositories:
 }
 ```
 
-Use the complete PHP preset for PHP repositories:
+For PHP repositories:
 
 ```json
 {
@@ -76,7 +54,7 @@ Use the complete PHP preset for PHP repositories:
 }
 ```
 
-For a custom configuration, begin with the repository-wide base and add only the required manager fragments:
+For a custom configuration, start with the base and add the required manager fragments:
 
 ```json
 {
@@ -87,4 +65,4 @@ For a custom configuration, begin with the repository-wide base and add only the
 }
 ```
 
-Manager fragments do not enable the seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings explicitly when constructing a custom policy.
+Manager fragments do not include the seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings separately.

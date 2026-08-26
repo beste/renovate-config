@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "PHP platform overrides for beste/ repos",
+  "description": "Ignore Composer PHP platform updates",
   "packageRules": [
     {
       "description": "Ignore PHP platform updates",
