@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "npm update policy",
+  "packageRules": [
+    {
+      "description": "Group npm minor and patch updates",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "npm non-major dependencies",
+      "groupSlug": "npm-non-major",
+      "dependencyDashboardCategory": "📦 npm"
+    }
+  ]
+}

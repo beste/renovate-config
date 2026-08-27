@@ -23,13 +23,24 @@
       "dependencyDashboardCategory": "⚙️ GitHub Actions"
     },
     {
-      "description": "Group and automerge GitHub Actions minor and patch updates",
+      "description": "Group and automerge GitHub Action and reusable workflow minor and patch updates",
       "matchManagers": ["github-actions"],
+      "matchDepTypes": ["action", "workflow"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "GitHub Actions non-major dependencies",
       "groupSlug": "github-actions-non-major",
       "automerge": true,
       "dependencyDashboardCategory": "⚙️ GitHub Actions"
+    },
+    {
+      "description": "Group and automerge workflow runtime and tool minor and patch updates",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["uses-with"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Workflow runtime and tool non-major dependencies",
+      "groupSlug": "workflow-runtime-tool-non-major",
+      "automerge": true,
+      "dependencyDashboardCategory": "⚙️ Workflow runtimes and tools"
     }
   ]
 }

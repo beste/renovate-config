@@ -12,7 +12,8 @@
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
-    "./github-actions"
+    "./github-actions",
+    "./npm"
   ],
   "commitBodyTable": true,
   "internalChecksFilter": "strict",

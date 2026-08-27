@@ -10,6 +10,7 @@ The configuration files define behavior. This README covers preset selection and
 - `default.json` - complete default preset
 - `github-actions.json` - GitHub Actions policy
 - `lang-php.json` - complete PHP preset
+- `npm.json` - npm update policy
 - `php-composer.json` - Composer policy
 - `php-platform.json` - ignores updates to the Composer `php` platform dependency
 - `renovate.json` - this repository's Renovate configuration
@@ -21,7 +22,9 @@ The configuration files define behavior. This README covers preset selection and
 | Category | Release age | Merge policy |
 | --- | --- | --- |
 | Composer minor and patch | 7 days | Automerge after checks |
-| GitHub Actions minor and patch | 7 days | Group and automerge after checks |
+| GitHub Actions minor and patch | 7 days | Group action and reusable workflow updates, then automerge after checks |
+| Workflow runtime and tool minor and patch | 7 days | Group separately and automerge after checks |
+| npm minor and patch | 7 days | Group separately and merge manually |
 | Docs Python tooling minor and patch | 7 days | Automerge after checks |
 | Lock-file maintenance | Not supported by Renovate | Run daily before `04:00 UTC` and automerge after checks |
 | Initial GitHub Action SHA pinning | Immediate | Group separately and automerge after checks |
