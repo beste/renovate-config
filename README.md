@@ -73,3 +73,18 @@ For a custom configuration, start with the base and add the required manager fra
 The examples use `github>` because this repository is hosted on GitHub.com. Use `local>` for a mirror hosted on the same forge instance as the target repository.
 
 Manager fragments do not include the seven-day release age, Dependency Dashboard, vulnerability alerts, or lock-file maintenance. Add those settings separately.
+
+## Notifications
+
+The shared presets do not set assignees. A consumer can route manual and failed automerge PRs to its maintainer without assigning successful automerge PRs:
+
+```json
+{
+  "extends": [
+    "github>beste/renovate-config",
+    ":assignee([USERNAME])"
+  ]
+}
+```
+
+Replace `[USERNAME]` with the GitHub username responsible for dependency updates. Renovate leaves successful automerge PRs unassigned unless the consumer enables `assignAutomerge`.
