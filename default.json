@@ -19,7 +19,7 @@
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "7 days",
   "prConcurrentLimit": 10,
-  "prHourlyLimit": 2,
+  "prHourlyLimit": 0,
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "lockFileMaintenance": {
     "enabled": true,

@@ -38,6 +38,7 @@ The configuration files define behavior. This README covers preset selection and
 Strict filtering blocks releases without a usable timestamp. Renovate cannot apply the seven-day age gate to every update type or datasource; the table lists the relevant exceptions.
 
 Renovate creates routine update branches early on Monday mornings in UTC. Vulnerability updates bypass this schedule.
+The weekly run has no hourly PR limit, while the repository-wide limit allows at most ten open Renovate PRs.
 
 Minor and patch automerge includes pre-`1.0` dependencies. No rule excludes `0.x` releases.
 

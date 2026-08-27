@@ -5,6 +5,7 @@
 - Group npm updates separately from other ecosystems.
 - Separate GitHub Action and reusable workflow updates from workflow runtime and tool updates.
 - Run routine updates and lock-file maintenance weekly.
+- Remove the hourly PR limit so weekly runs can process the available batch.
 - Stop forcing manual update PRs to rebase after every base-branch change.
 - Assign this repository's manual and failed automerge PRs to its maintainer.
 - Add a shared base preset for PR-based, Renovate-managed rebase automerge with required status checks and semantic commits disabled.
