@@ -26,7 +26,7 @@ The configuration files define behavior. This README covers preset selection and
 | Workflow runtime and tool minor and patch | 7 days | Group separately and automerge after checks |
 | npm minor and patch | 7 days | Group separately and merge manually |
 | Docs Python tooling minor and patch | 7 days | Automerge after checks |
-| Lock-file maintenance | Not supported by Renovate | Run daily before `04:00 UTC` and automerge after checks |
+| Lock-file maintenance | Not supported by Renovate | Run weekly and automerge after checks |
 | Initial GitHub Action SHA pinning | Immediate | Group separately and automerge after checks |
 | Major updates | 7 days when supported | Require Dependency Dashboard approval and manual merge |
 | Digest updates | 7 days when supported | Manual merge |
@@ -36,6 +36,8 @@ The configuration files define behavior. This README covers preset selection and
 | All other updates | 7 days when supported | Manual merge |
 
 Strict filtering blocks releases without a usable timestamp. Renovate cannot apply the seven-day age gate to every update type or datasource; the table lists the relevant exceptions.
+
+Renovate creates routine update branches early on Monday mornings in UTC. Vulnerability updates bypass this schedule.
 
 Minor and patch automerge includes pre-`1.0` dependencies. No rule excludes `0.x` releases.
 

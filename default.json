@@ -9,6 +9,7 @@
     ":ignoreModulesAndTests",
     ":label(dependencies)",
     ":rebaseStalePrs",
+    "schedule:weekly",
     ":separateMajorReleases",
     ":timezone(UTC)",
     "docker:pinDigests",
@@ -24,7 +25,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "extends": ["schedule:daily"]
+    "extends": ["schedule:weekly"]
   },
   "packageRules": [
     {
