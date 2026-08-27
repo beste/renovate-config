@@ -5,10 +5,36 @@
     "helpers:githubDigestChangelogs",
     "helpers:pinGitHubActionDigestsToSemver"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update actionlint invoked through Go in GitHub Actions workflows",
+      "managerFilePatterns": ["/^\\.github\\/workflows\\/[^/]+\\.ya?ml$/"],
+      "matchStrings": [
+        "go[ \\t]+(?:run|install)[ \\t]+github\\.com/rhysd/actionlint/cmd/actionlint@(?<currentValue>v\\d+\\.\\d+\\.\\d+)"
+      ],
+      "depNameTemplate": "github.com/rhysd/actionlint",
+      "datasourceTemplate": "go",
+      "versioningTemplate": "semver",
+      "depTypeTemplate": "uses-with"
+    },
+    {
+      "customType": "regex",
+      "description": "Update crates installed by Cargo in GitHub Actions workflows",
+      "managerFilePatterns": ["/^\\.github\\/workflows\\/[^/]+\\.ya?ml$/"],
+      "matchStrings": [
+        "cargo[ \\t]+install[ \\t]+(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)@(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)",
+        "cargo[ \\t]+install[ \\t]+(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)[ \\t]+--(?:vers|version)[ \\t]+(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)"
+      ],
+      "datasourceTemplate": "crate",
+      "versioningTemplate": "cargo",
+      "depTypeTemplate": "uses-with"
+    }
+  ],
   "packageRules": [
     {
       "description": "Replace workflow runtime and tool versions",
-      "matchManagers": ["github-actions"],
+      "matchManagers": ["github-actions", "custom.regex"],
       "matchDepTypes": ["uses-with"],
       "rangeStrategy": "replace"
     },
@@ -34,7 +60,7 @@
     },
     {
       "description": "Group and automerge workflow runtime and tool minor and patch updates",
-      "matchManagers": ["github-actions"],
+      "matchManagers": ["github-actions", "custom.regex"],
       "matchDepTypes": ["uses-with"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "Workflow runtime and tool non-major dependencies",

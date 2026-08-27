@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Pin the Renovate validator used by CI.
+- Stop persisting checkout credentials during validation.
+- Analyze GitHub Actions workflows with actionlint and zizmor.
+- Add the MIT license.
 - Group npm updates separately from other ecosystems.
 - Separate GitHub Action and reusable workflow updates from workflow runtime and tool updates.
 - Run routine updates and lock-file maintenance weekly.

@@ -1,4 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>beste/renovate-config", ":assignee(jeromegamez)"]
+  "extends": ["local>beste/renovate-config", ":assignee(jeromegamez)"],
+  "packageRules": [
+    {
+      "description": "Keep the Renovate validator version exact",
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["renovate"],
+      "rangeStrategy": "replace"
+    }
+  ]
 }
