@@ -4,6 +4,6 @@
     "validate": "renovate-config-validator --strict --no-global base.json default.json github-actions.json lang-php.json npm.json php-composer.json php-platform.json renovate.json"
   },
   "devDependencies": {
-    "renovate": "44.182.2"
+    "renovate": "44.210.0"
   }
 }
