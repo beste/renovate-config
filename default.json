@@ -7,7 +7,7 @@
     ":dependencyDashboard",
     ":enableVulnerabilityAlerts",
     ":ignoreModulesAndTests",
-    ":label(dependencies)",
+    ":label(dependencies 📦)",
     "schedule:weekly",
     ":separateMajorReleases",
     ":timezone(UTC)",
@@ -43,7 +43,8 @@
   "osvVulnerabilityAlerts": true,
   "rangeStrategy": "widen",
   "vulnerabilityAlerts": {
-    "extends": [":automergeDisabled", ":automergePr", ":label(security)"],
+    "commitMessageSuffix": "",
+    "extends": [":automergeDisabled", ":automergePr", ":label(security 🔒)"],
     "rangeStrategy": "bump"
   }
 }

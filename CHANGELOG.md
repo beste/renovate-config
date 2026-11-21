@@ -20,7 +20,7 @@
 - Separate initial GitHub Action pinning from other digest-pinning updates.
 - Replace workflow runtime and tool versions instead of widening their ranges.
 - Resolve internal presets relative to their repository and release tag.
-- Keep vulnerability updates immediate but manual and apply the `security` label correctly.
+- Keep vulnerability updates immediate but manual, apply the `security 🔒` label, and drop the `[SECURITY]` commit/PR title suffix.
 - Allow normal update branches whenever Renovate runs.
 - Use strict seven-day release-age filtering for supported normal updates.
 - Add dedicated GitHub Actions and Composer presets.
