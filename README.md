@@ -24,9 +24,9 @@ The configuration files define behavior. This README covers preset selection and
 | Composer minor and patch | 7 days | Automerge after checks |
 | GitHub Actions minor and patch | 7 days | Group action and reusable workflow updates, then automerge after checks |
 | Workflow runtime and tool minor and patch | 7 days | Group separately and automerge after checks |
-| npm minor and patch | 7 days | Group separately and merge manually |
+| npm minor and patch | 7 days | Group separately and automerge after checks |
 | Docs Python tooling minor and patch | 7 days | Automerge after checks |
-| Lock-file maintenance | Not supported by Renovate | Run weekly and automerge after checks |
+| Lock-file maintenance | Disabled | Run weekly and automerge after checks |
 | Initial GitHub Action SHA pinning | Immediate | Group separately and automerge after checks |
 | Major updates | 7 days when supported | Require Dependency Dashboard approval and manual merge |
 | Digest updates | 7 days when supported | Manual merge |

@@ -12,9 +12,9 @@
 - Remove the hourly PR limit so weekly runs can process the available batch.
 - Stop forcing manual update PRs to rebase after every base-branch change.
 - Assign this repository's manual and failed automerge PRs to its maintainer.
-- Add a shared base preset for PR-based, Renovate-managed rebase automerge with required status checks and semantic commits disabled.
-- Replace broad minor automerge with explicit Composer, GitHub Actions, and docs Python tooling rules.
-- Keep lock-file maintenance automerge explicit.
+- Add a shared base preset for PR-based, platform-managed rebase automerge with required status checks and semantic commits disabled.
+- Replace broad minor automerge with explicit Composer, GitHub Actions, npm, and docs Python tooling rules.
+- Keep lock-file maintenance automerge explicit and disable its minimum release age so weekly lock-file PRs can automerge.
 - Pin GitHub Actions to immutable SHAs with exact SemVer comments and digest comparison links.
 - Automerge initial GitHub Action SHA pinning immediately while keeping subsequent digest updates manual.
 - Separate initial GitHub Action pinning from other digest-pinning updates.
