@@ -7,6 +7,6 @@
     ":semanticCommitsDisabled"
   ],
   "automergeStrategy": "rebase",
-  "platformAutomerge": false,
+  "platformAutomerge": true,
   "prCreation": "immediate"
 }

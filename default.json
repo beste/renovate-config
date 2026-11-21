@@ -24,6 +24,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
+    "minimumReleaseAge": null,
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
