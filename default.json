@@ -20,7 +20,9 @@
   "minimumReleaseAge": "7 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 0,
-  "dependencyDashboardOSVVulnerabilitySummary": "all",
+  "dependencyDashboard": {
+    "osvVulnerabilitySummary": "all"
+  },
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -31,7 +33,7 @@
     {
       "description": "Automerge docs Python tooling minor and patch updates",
       "matchFileNames": ["docs/pyproject.toml", "docs/uv.lock"],
-      "matchManagers": ["pep621", "uv"],
+      "matchManagers": ["pep621"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "dependencyDashboardCategory": "📚 Docs"
