@@ -5,5 +5,23 @@
     "./default",
     "./php-composer",
     "./php-platform"
+  ],
+  "packageRules": [
+    {
+      "description": "Disable routine updates for repo-local tools while keeping vulnerability alerts active",
+      "matchFileNames": ["tools/**"],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "digest",
+        "pinDigest",
+        "lockFileMaintenance",
+        "rollback",
+        "replacement"
+      ],
+      "enabled": false
+    }
   ]
 }

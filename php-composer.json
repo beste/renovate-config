@@ -3,10 +3,15 @@
   "description": "Composer update policy",
   "packageRules": [
     {
-      "description": "Keep Composer minor and patch updates together and create rollback PRs",
+      "description": "Create rollback PRs for removed Composer versions",
       "matchManagers": ["composer"],
-      "separateMinorPatch": false,
       "rollbackPrs": true
+    },
+    {
+      "description": "Widen root Composer dependency ranges",
+      "matchManagers": ["composer"],
+      "matchFileNames": ["composer.json"],
+      "rangeStrategy": "widen"
     },
     {
       "description": "Automerge Composer minor and patch updates",
@@ -31,13 +36,12 @@
       "dependencyDashboardCategory": "📦 Composer"
     },
     {
-      "description": "Group PHP tool Composer minor and patch updates",
+      "description": "Require manual merge for pre-1.0 Composer minor updates",
       "matchManagers": ["composer"],
-      "matchFileNames": ["tools/.phpstan/composer.json", "tools/.rector/composer.json"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "PHP tool Composer non-major dependencies",
-      "groupSlug": "php-tools-composer-non-major",
-      "dependencyDashboardCategory": "🛠️ PHP tools"
+      "matchCurrentVersion": "/^[~^>=<\\s]*v?0\\./",
+      "matchUpdateTypes": ["minor"],
+      "groupName": null,
+      "automerge": false
     }
   ]
 }

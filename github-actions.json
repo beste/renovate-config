@@ -23,8 +23,8 @@
       "description": "Update crates installed by Cargo in GitHub Actions workflows",
       "managerFilePatterns": ["/^\\.github\\/workflows\\/[^/]+\\.ya?ml$/"],
       "matchStrings": [
-        "cargo[ \\t]+install[ \\t]+(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)@(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)",
-        "cargo[ \\t]+install[ \\t]+(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)[ \\t]+--(?:vers|version)[ \\t]+(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)"
+        "cargo[ \\t]+install[ \\t]+(?:--locked[ \\t]+)?(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)@(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)",
+        "cargo[ \\t]+install[ \\t]+(?:--locked[ \\t]+)?(?<depName>[A-Za-z0-9][A-Za-z0-9_-]*)[ \\t]+(?:--locked[ \\t]+)?--(?:vers|version)[ \\t]+(?<currentValue>\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?)"
       ],
       "datasourceTemplate": "crate",
       "versioningTemplate": "cargo",
@@ -67,6 +67,15 @@
       "groupSlug": "workflow-runtime-tool-non-major",
       "automerge": true,
       "dependencyDashboardCategory": "⚙️ Workflow runtimes and tools"
+    },
+    {
+      "description": "Require manual merge for pre-1.0 GitHub Actions and workflow tool minor updates",
+      "matchManagers": ["github-actions", "custom.regex"],
+      "matchDepTypes": ["action", "workflow", "uses-with"],
+      "matchCurrentVersion": "/^[~^>=<\\s]*v?0\\./",
+      "matchUpdateTypes": ["minor"],
+      "groupName": null,
+      "automerge": false
     }
   ]
 }

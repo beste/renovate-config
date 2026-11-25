@@ -10,6 +10,14 @@
       "groupSlug": "npm-non-major",
       "automerge": true,
       "dependencyDashboardCategory": "📦 npm"
+    },
+    {
+      "description": "Require manual merge for pre-1.0 npm minor updates",
+      "matchManagers": ["npm"],
+      "matchCurrentVersion": "/^[~^>=<\\s]*v?0\\./",
+      "matchUpdateTypes": ["minor"],
+      "groupName": null,
+      "automerge": false
     }
   ]
 }

@@ -23,30 +23,14 @@
   "dependencyDashboard": {
     "osvVulnerabilitySummary": "all"
   },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "minimumReleaseAge": null,
-    "extends": ["schedule:weekly"]
-  },
-  "packageRules": [
-    {
-      "description": "Automerge docs Python tooling minor and patch updates",
-      "matchFileNames": ["docs/pyproject.toml", "docs/uv.lock"],
-      "matchManagers": ["pep621"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "dependencyDashboardCategory": "📚 Docs"
-    }
-  ],
   "major": {
     "dependencyDashboardApproval": true
   },
   "osvVulnerabilityAlerts": true,
-  "rangeStrategy": "widen",
   "vulnerabilityAlerts": {
+    "addLabels": ["security 🔒"],
     "commitMessageSuffix": "",
-    "extends": [":automergeDisabled", ":automergePr", ":label(security 🔒)"],
+    "extends": [":automergeDisabled"],
     "rangeStrategy": "bump"
   }
 }
